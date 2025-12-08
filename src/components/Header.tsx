@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoCea from '@/assets/logo-cea.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,17 +27,19 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-medium py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-card/95 backdrop-blur-md shadow-medium py-2'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              <span className="text-2xl">🦉</span>
-            </div>
+            <img 
+              src={logoCea} 
+              alt="CEA - Centro de Enseñanza y Asesorías" 
+              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
             <div className="hidden sm:block">
               <h1 className={`font-bold text-lg leading-tight transition-colors duration-300 ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground'
