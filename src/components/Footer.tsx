@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
+import logoCea from '@/assets/logo-cea.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,9 +29,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-3xl">🦉</span>
-              </div>
+              <img 
+                src={logoCea} 
+                alt="CEA - Centro de Enseñanza y Asesorías" 
+                className="h-16 w-auto bg-secondary-foreground/10 rounded-xl p-1"
+              />
               <div>
                 <h3 className="font-bold text-xl text-secondary-foreground">CEA</h3>
                 <p className="text-xs text-secondary-foreground/70">Centro de Enseñanza</p>
