@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-5 py-2 rounded-full mb-8 animate-fade-in-down">
-            <span className="text-2xl">🦉</span>
+            <BookOpen className="w-5 h-5 text-primary" />
             <span className="text-primary-foreground/90 font-medium text-sm">
               Educación de Calidad desde 2010
             </span>
@@ -38,7 +38,7 @@ const Hero = () => {
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up opacity-0 stagger-1">
             Centro de Enseñanza
-            <span className="block text-primary mt-2">y Asesorías</span>
+            <span className="block text-primary mt-2">y Capacitación</span>
           </h1>
 
           {/* Subtitle */}
