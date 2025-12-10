@@ -1,4 +1,6 @@
 import { Star, Quote } from 'lucide-react';
+import ceaImage2 from '@/assets/CEA 2.jpeg';
+import ceaImage3 from '@/assets/CEA 3.jpeg';
 
 const testimonials = [
   {
@@ -26,13 +28,42 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-surface-warm">
-      <div className="section-container">
+    <section className="relative py-20 bg-surface-warm overflow-hidden">
+      {/* Decorative Background Images */}
+      <div className="absolute -top-40 -right-48 opacity-5 pointer-events-none">
+        <img 
+          src={ceaImage2}
+          alt="CEA Background"
+          className="w-96 h-auto animate-float"
+        />
+      </div>
+      <div className="absolute -bottom-32 -left-40 opacity-5 pointer-events-none">
+        <img 
+          src={ceaImage3}
+          alt="CEA Background"
+          className="w-96 h-auto animate-float"
+          style={{ animationDelay: '2s' }}
+        />
+      </div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Testimonios
-          </span>
+          <div className="flex items-center justify-center gap-4 mb-4 flex-wrap">
+            <img 
+              src={ceaImage2}
+              alt="CEA Icon"
+              className="w-32 h-32 object-cover rounded-lg"
+            />
+            <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold">
+              Testimonios
+            </span>
+            <img 
+              src={ceaImage3}
+              alt="CEA Icon"
+              className="w-32 h-32 object-cover rounded-lg"
+            />
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Lo Que Dicen Nuestros Estudiantes
           </h2>

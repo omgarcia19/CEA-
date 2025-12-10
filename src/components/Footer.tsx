@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
-import logoCea from '@/assets/logo-cea.png';
+import logoCea from '@/assets/logo-cea (1) (1).png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,9 +22,26 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
+      {/* Decorative Background Logo */}
+      <div className="absolute -bottom-20 -right-40 opacity-5 pointer-events-none">
+        <img 
+          src={logoCea}
+          alt="CEA Logo Background"
+          className="w-96 h-auto animate-float"
+        />
+      </div>
+      <div className="absolute -top-32 -left-40 opacity-5 pointer-events-none">
+        <img 
+          src={logoCea}
+          alt="CEA Logo Background"
+          className="w-80 h-auto animate-float"
+          style={{ animationDelay: '2s' }}
+        />
+      </div>
+
       {/* Main Footer */}
-      <div className="section-container py-16">
+      <div className="section-container py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -111,7 +128,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
                 <span className="text-secondary-foreground/70">
-                  info@ceaensenanza.com
+                  cea.edu.mx@gmail.com
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -133,7 +150,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-secondary-foreground/10">
+      <div className="border-t border-secondary-foreground/10 relative z-10">
         <div className="section-container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-secondary-foreground/60">
             <p>© {currentYear} CEA - Centro de Enseñanza y Asesorías. Todos los derechos reservados.</p>

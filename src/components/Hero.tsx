@@ -1,45 +1,59 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BookOpen } from 'lucide-react';
+import ceaLogo from '@/assets/logo-cea (1) (1).png';
+import ceaImage1 from '@/assets/CEA 1.jpeg';
+import MagicStars from './MagicStars';
 
 const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[hsl(var(--navy-dark))] via-[hsl(var(--navy))] to-[hsl(var(--magic-purple))]/30"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-        }}
-      />
+      {/* Magic Stars Background */}
+      <MagicStars />
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 via-secondary/75 to-primary/40" />
       
       {/* Animated shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse-soft" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-magic-blue/20 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-magic-green/20 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-magic-gold/10 rounded-full blur-3xl animate-shimmer" style={{ animationDelay: '0.5s' }} />
       </div>
 
       {/* Content */}
       <div className="relative z-10 section-container text-center py-32">
         <div className="max-w-4xl mx-auto">
+          {/* Decorative Logo */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+            <img 
+              src={ceaLogo} 
+              alt="CEA Logo Decoration" 
+              className="w-96 h-auto animate-float"
+            />
+          </div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-5 py-2 rounded-full mb-8 animate-fade-in-down">
-            <span className="text-2xl">🦉</span>
             <span className="text-primary-foreground/90 font-medium text-sm">
-              Educación de Calidad desde 2010
+              Educación de Calidad desde 2020
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up opacity-0 stagger-1">
-            Centro de Enseñanza
-            <span className="block text-primary mt-2">y Asesorías</span>
-          </h1>
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <img 
+              src={ceaImage1}
+              alt="CEA"
+              className="w-40 h-40 object-cover rounded-lg animate-fade-in-up opacity-0 stagger-1"
+            />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in-up opacity-0 stagger-1">
+              Centro de Enseñanza
+              <span className="block text-primary mt-2">y Aprendizaje</span>
+            </h1>
+          </div>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 stagger-2">
@@ -61,8 +75,8 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate-fade-in-up opacity-0 stagger-4">
             {[
-              { number: '500+', label: 'Estudiantes' },
-              { number: '15+', label: 'Años de Experiencia' },
+              { number: '200+', label: 'Estudiantes' },
+              { number: '5+', label: 'Años de Experiencia' },
               { number: '98%', label: 'Satisfacción' },
               { number: '50+', label: 'Cursos Impartidos' },
             ].map((stat, index) => (

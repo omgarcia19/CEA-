@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import ceaImage4 from '@/assets/CEA 4.jpeg';
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [showMap, setShowMap] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -58,13 +60,29 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-background">
-      <div className="section-container">
+    <section id="contacto" className="relative py-20 bg-background overflow-hidden">
+      {/* Decorative Background Image */}
+      <div className="absolute -top-32 -right-32 opacity-5 pointer-events-none">
+        <img 
+          src={ceaImage4}
+          alt="CEA Background"
+          className="w-96 h-auto animate-float"
+        />
+      </div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Contáctanos
-          </span>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img 
+              src={ceaImage4}
+              alt="CEA Icon"
+              className="w-32 h-32 object-cover rounded-lg"
+            />
+            <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold">
+              Contáctanos
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             ¿Listo para Empezar?
           </h2>
@@ -81,7 +99,10 @@ const ContactSection = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-2xl p-6 shadow-medium text-center"
+                  className={`bg-card rounded-2xl p-6 shadow-medium text-center ${
+                    info.title === 'Ubicación' ? 'cursor-pointer hover:shadow-lg transition-shadow' : ''
+                  }`}
+                  onClick={() => info.title === 'Ubicación' && setShowMap(true)}
                 >
                   <div className={`w-12 h-12 ${info.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                     <info.icon size={24} />
@@ -112,7 +133,7 @@ const ContactSection = () => {
               >
                 <Button className="bg-primary-foreground text-green-600 hover:bg-primary-foreground/90 font-semibold px-8 py-6 text-lg">
                   <MessageCircle className="mr-2" />
-                  Enviar Mensaje
+                  56 13 77 19 48
                 </Button>
               </a>
             </div>
@@ -232,6 +253,30 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Map Modal */}
+      {showMap && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button
+              onClick={() => setShowMap(false)}
+              className="absolute top-4 right-4 z-10 bg-background p-2 rounded-full hover:bg-muted transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30139.12615009073!2d-99.24339342568356!3d19.221794100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdfdb555347bd7%3A0xb9171d360d0e32f1!2sCentro%20de%20Ense%C3%B1anza%20y%20Aprendizaje!5e0!3m2!1ses!2smx!4v1765254761765!5m2!1ses!2smx"
+              width="100%"
+              height="600"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { CheckCircle, FileCheck, Shield, Clock, Users, Award } from 'lucide-react';
+import ceaLogo2 from '@/assets/CEA LOGO 2.png';
 
 const courses = [
   {
     nom: 'NOM-154-SCFI-2005',
     title: 'Equipos Contra Incendio',
     subtitle: 'Mantenimiento y Llenado de Extintores',
-    description: 'Capacitación completa para la recarga, mantenimiento y comercialización de equipos contra incendio según la normativa oficial.',
+    description: 'Certificación oficial para carga y descarga de extintores.',
     features: [
       'Certificación oficial reconocida',
       'Instructores con experiencia',
@@ -38,8 +39,25 @@ const courses = [
 
 const NOMCourses = () => {
   return (
-    <section id="cursos-nom" className="py-20 bg-secondary text-secondary-foreground">
-      <div className="section-container">
+    <section id="cursos-nom" className="relative py-20 bg-secondary text-secondary-foreground overflow-hidden">
+      {/* Decorative Background Logos */}
+      <div className="absolute -top-40 -right-32 opacity-5 pointer-events-none">
+        <img 
+          src={ceaLogo2}
+          alt="CEA Logo Background"
+          className="w-96 h-auto animate-float"
+        />
+      </div>
+      <div className="absolute -bottom-24 -left-32 opacity-5 pointer-events-none">
+        <img 
+          src={ceaLogo2}
+          alt="CEA Logo Background"
+          className="w-80 h-auto animate-float"
+          style={{ animationDelay: '2s' }}
+        />
+      </div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">

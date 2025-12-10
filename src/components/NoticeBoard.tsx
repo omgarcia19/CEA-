@@ -8,6 +8,7 @@ import {
   Award,
   Users
 } from 'lucide-react';
+import ceaImage1 from '@/assets/CEA 1.jpeg';
 
 const services = [
   {
@@ -43,7 +44,7 @@ const services = [
   {
     icon: FileCheck,
     title: 'Curso NOM-154-SCFI-2005',
-    description: 'Certificación oficial para instalación de gas LP.',
+    description: 'Certificación oficial para carga y descarga de extintores.',
     color: 'bg-purple-500/10 text-purple-600',
   },
   {
@@ -62,13 +63,29 @@ const services = [
 
 const NoticeBoard = () => {
   return (
-    <section id="servicios" className="py-20 bg-surface-warm">
-      <div className="section-container">
+    <section id="servicios" className="relative py-20 bg-surface-warm overflow-hidden">
+      {/* Decorative Background Image */}
+      <div className="absolute -bottom-32 -left-32 opacity-5 pointer-events-none">
+        <img 
+          src={ceaImage1}
+          alt="CEA Background"
+          className="w-96 h-auto"
+        />
+      </div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Nuestros Servicios
-          </span>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img 
+              src={ceaImage1}
+              alt="CEA Icon"
+              className="w-32 h-32 object-cover rounded-lg"
+            />
+            <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold">
+              Nuestros Servicios
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             ¿Qué ofrecemos?
           </h2>

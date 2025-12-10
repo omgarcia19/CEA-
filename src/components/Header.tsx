@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoCea from '@/assets/logo-cea.png';
+import logoCea from '@/assets/logo-cea (1) (1).png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,9 +73,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button className="btn-primary">
-              ¡Quiero más información!
-            </Button>
+            <a href="#contacto">
+              <Button className="btn-primary">
+                ¡Quiero más información!
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,9 +107,11 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-2">
-                <Button className="btn-primary w-full">
-                  ¡Quiero más información!
-                </Button>
+                <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="block">
+                  <Button className="btn-primary w-full">
+                    ¡Quiero más información!
+                  </Button>
+                </a>
               </div>
             </div>
           </nav>

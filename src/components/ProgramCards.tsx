@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import ceaLogo2 from '@/assets/CEA LOGO 2.png';
 
 const programs = [
   {
@@ -48,8 +49,25 @@ const programs = [
 
 const ProgramCards = () => {
   return (
-    <section id="programas" className="py-20 bg-background">
-      <div className="section-container">
+    <section id="programas" className="relative py-20 bg-background overflow-hidden">
+      {/* Decorative Background Logos */}
+      <div className="absolute -top-32 -left-40 opacity-5 pointer-events-none">
+        <img 
+          src={ceaLogo2}
+          alt="CEA Logo Background"
+          className="w-80 h-auto animate-float"
+        />
+      </div>
+      <div className="absolute -bottom-20 -right-40 opacity-5 pointer-events-none">
+        <img 
+          src={ceaLogo2}
+          alt="CEA Logo Background"
+          className="w-96 h-auto animate-float"
+          style={{ animationDelay: '2s' }}
+        />
+      </div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
