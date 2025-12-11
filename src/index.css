@@ -8,57 +8,71 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 260 30% 20%;
+    /* ===== FONDOS Y BASE ===== */
+    --background: 0 0% 99%;
+    --foreground: 217 33% 17%;
 
+    /* ===== TARJETAS ===== */
     --card: 0 0% 100%;
-    --card-foreground: 260 30% 20%;
+    --card-foreground: 217 33% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 30% 20%;
+    --popover-foreground: 217 33% 17%;
 
-    --primary: 210 100% 35%;
+    /* ===== COLORES INSTITUCIONALES - PALETA CEA ===== */
+    /* Azul Institucional - Principal */
+    --primary: 217 100% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 210 100% 25%;
+    --primary-hover: 217 100% 28%;
+    --primary-light: 217 89% 85%;
 
-    --secondary: 45 100% 50%;
-    --secondary-foreground: 260 30% 20%;
+    /* Oro Degradado - Secundario/Acento */
+    --secondary: 38 93% 52%;
+    --secondary-foreground: 217 33% 17%;
+    --secondary-light: 38 93% 85%;
+    --secondary-dark: 38 93% 38%;
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 260 30% 40%;
+    /* ===== NEUTROS PROFESIONALES ===== */
+    --muted: 217 20% 90%;
+    --muted-foreground: 217 20% 45%;
 
-    --accent: 45 100% 60%;
-    --accent-foreground: 260 30% 20%;
+    --accent: 38 93% 52%;
+    --accent-foreground: 0 0% 100%;
 
+    /* ===== ESTADOS ===== */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 95%;
-    --ring: 190 100% 45%;
+    --border: 217 20% 88%;
+    --input: 0 0% 96%;
+    --ring: 217 100% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens - Magical Colors */
-    --hero-overlay: 260 100% 15%;
-    --text-primary: 260 30% 20%;
-    --text-secondary: 260 30% 40%;
-    --surface-warm: 45 100% 90%;
-    --gold: 45 100% 60%;
-    --gold-dark: 45 100% 50%;
-    --magic-blue: 210 100% 35%;
-    --magic-gold: 45 100% 50%;
-    --magic-purple: 210 100% 30%;
-    --magic-gold: 45 100% 60%;
-    --navy: 260 100% 25%;
-    --navy-dark: 260 30% 20%;
+    /* ===== PALETA EXTENDIDA CEA ===== */
+    --cea-blue: 217 100% 35%;
+    --cea-blue-light: 217 89% 85%;
+    --cea-blue-dark: 217 100% 25%;
+    
+    --cea-gold: 38 93% 52%;
+    --cea-gold-light: 38 93% 75%;
+    --cea-gold-dark: 38 93% 38%;
+    
+    --cea-white: 0 0% 100%;
+    --cea-gray-light: 217 20% 95%;
+    --cea-gray-medium: 217 20% 70%;
+    --cea-gray-dark: 217 20% 30%;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(var(--foreground) / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -2px hsl(var(--foreground) / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 0 4px 6px -4px hsl(var(--foreground) / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(var(--foreground) / 0.1), 0 8px 10px -6px hsl(var(--foreground) / 0.1);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    /* ===== SOMBRAS PROFESIONALES ===== */
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+    --shadow-premium: 0 25px 50px -12px rgba(33, 113, 181, 0.15);
+    
+    /* ===== SOMBRAS INSTITUCIONALES ===== */
+    --shadow-hover: 0 15px 30px rgba(33, 113, 181, 0.2);
+    --shadow-glow: 0 0 30px rgba(33, 113, 181, 0.2);
   }
 
   .dark {
@@ -135,60 +149,85 @@
 }
 
 @layer components {
+  /* ===== BOTONES PROFESIONALES CEA ===== */
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:bg-[hsl(var(--primary-hover))] 
-           hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-[hsl(var(--cea-blue))] text-white font-semibold px-6 py-3 rounded-lg 
+           transition-all duration-300 hover:bg-[hsl(var(--cea-blue-dark))] 
+           hover:shadow-[var(--shadow-hover)] hover:-translate-y-1 active:translate-y-0
+           shadow-[var(--shadow-md)] border border-[hsl(var(--cea-blue))]/20;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:bg-secondary/90 
-           hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-[hsl(var(--cea-gold))] text-[hsl(var(--cea-blue))] font-semibold px-6 py-3 rounded-lg 
+           transition-all duration-300 hover:bg-[hsl(var(--cea-gold-dark))] hover:text-white
+           hover:shadow-[var(--shadow-hover)] hover:-translate-y-1 active:translate-y-0
+           shadow-[var(--shadow-md)];
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:bg-primary hover:text-primary-foreground 
-           hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply border-2 border-[hsl(var(--cea-blue))] text-[hsl(var(--cea-blue))] font-semibold px-6 py-3 rounded-lg 
+           transition-all duration-300 hover:bg-[hsl(var(--cea-blue))] hover:text-white
+           hover:shadow-[var(--shadow-hover)] hover:-translate-y-1 active:translate-y-0;
   }
 
   .btn-hero {
-    @apply bg-primary text-primary-foreground font-bold px-8 py-4 rounded-xl 
-           text-lg transition-all duration-300 hover:bg-[hsl(var(--primary-hover))] 
-           hover:shadow-xl hover:-translate-y-1 active:translate-y-0
-           shadow-lg;
+    @apply bg-[hsl(var(--cea-blue))] text-white font-bold px-8 py-4 rounded-xl 
+           text-lg transition-all duration-300 hover:bg-[hsl(var(--cea-blue-dark))] 
+           hover:shadow-[var(--shadow-premium)] hover:-translate-y-2 active:translate-y-0
+           shadow-[var(--shadow-lg)] border border-[hsl(var(--cea-blue))]/10;
   }
 
   .btn-hero-outline {
-    @apply border-2 border-primary-foreground/30 text-primary-foreground font-semibold 
+    @apply border-2 border-white text-white font-semibold 
            px-8 py-4 rounded-xl text-lg transition-all duration-300 
-           hover:bg-primary-foreground/10 hover:border-primary-foreground/50
-           backdrop-blur-sm;
+           hover:bg-white hover:text-[hsl(var(--cea-blue))] hover:shadow-[var(--shadow-premium)]
+           hover:-translate-y-2 active:translate-y-0 backdrop-blur-sm;
   }
 
+  /* ===== TARJETAS PROFESIONALES ===== */
   .card-service {
-    @apply bg-card rounded-2xl p-6 shadow-md transition-all duration-300 
-           hover:shadow-xl hover:-translate-y-1 border border-border/50;
+    @apply bg-white rounded-2xl p-6 shadow-[var(--shadow-md)] transition-all duration-300 
+           hover:shadow-[var(--shadow-lg)] hover:-translate-y-2 border border-[hsl(var(--cea-gray-light))];
   }
 
   .card-program {
-    @apply bg-card rounded-2xl overflow-hidden shadow-lg transition-all duration-300 
-           hover:shadow-xl hover:-translate-y-2 border border-border/50;
+    @apply bg-white rounded-2xl overflow-hidden shadow-[var(--shadow-lg)] transition-all duration-300 
+           hover:shadow-[var(--shadow-premium)] hover:-translate-y-3 border border-[hsl(var(--cea-gray-light))];
   }
 
+  .card-testimonial {
+    @apply bg-white rounded-2xl p-8 shadow-[var(--shadow-md)] transition-all duration-300 
+           hover:shadow-[var(--shadow-lg)] hover:-translate-y-2 border border-[hsl(var(--cea-gray-light))];
+  }
+
+  .card-course {
+    @apply bg-white rounded-2xl overflow-hidden shadow-[var(--shadow-lg)] transition-all duration-300
+           hover:shadow-[var(--shadow-premium)] hover:-translate-y-2 border border-[hsl(var(--cea-gold-light))]/30;
+  }
+
+  /* ===== CONTENEDORES ===== */
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* ===== GRADIENTES Y TEXTOS ===== */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-[hsl(var(--primary-hover))] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[hsl(var(--cea-blue))] to-[hsl(var(--cea-gold))] bg-clip-text text-transparent;
   }
 
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-[hsl(var(--cea-blue))] to-[hsl(var(--cea-blue-dark))] bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-[hsl(var(--cea-gold))] to-[hsl(var(--cea-gold-dark))] bg-clip-text text-transparent;
+  }
+
+  /* ===== ENLACES DE NAVEGACIÓN ===== */
   .nav-link {
     @apply text-foreground/80 font-medium transition-colors duration-200 
-           hover:text-primary relative after:absolute after:bottom-0 after:left-0 
-           after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 
+           hover:text-[hsl(var(--cea-blue))] relative after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-0.5 after:bg-[hsl(var(--cea-gold))] after:transition-all after:duration-300 
            hover:after:w-full;
   }
 }
