@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import ceaLogo from '@/assets/logo-cea (1) (1).png';
-import ceaImage1 from '@/assets/CEA 1.jpeg';
 import MagicStars from './MagicStars';
 
 const Hero = () => {
@@ -43,17 +42,10 @@ const Hero = () => {
           </div>
 
           {/* Title */}
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <img 
-              src={ceaImage1}
-              alt="CEA"
-              className="w-40 h-40 object-cover rounded-lg animate-fade-in-up opacity-0 stagger-1"
-            />
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in-up opacity-0 stagger-1">
-              Centro de Enseñanza
-              <span className="block text-primary mt-2">y Aprendizaje</span>
-            </h1>
-          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up opacity-0 stagger-1">
+            Centro de Enseñanza
+            <span className="block text-primary mt-2">y Aprendizaje</span>
+          </h1>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 stagger-2">

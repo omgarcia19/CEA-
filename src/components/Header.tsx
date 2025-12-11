@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoCea from '@/assets/logo-cea (1) (1).png';
+import logoCea from '@/assets/logo-cea 10.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

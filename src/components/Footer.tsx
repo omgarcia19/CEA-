@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
-import logoCea from '@/assets/logo-cea (1) (1).png';
+import logoCea from '@/assets/logo-cea 10.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

@@ -7,7 +7,7 @@ const courses = [
     nom: 'NOM-154-SCFI-2005',
     title: 'Equipos Contra Incendio',
     subtitle: 'Mantenimiento y Llenado de Extintores',
-    description: 'Certificación oficial para carga y descarga de extintores.',
+    logo-cea 10
     features: [
       'Certificación oficial reconocida',
       'Instructores con experiencia',
