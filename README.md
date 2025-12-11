@@ -71,3 +71,31 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# CEA - Centro de Enseñanza y Aprendizaje
+
+Sitio web oficial del Centro de Enseñanza y Aprendizaje (CEA). Plataforma educativa con colores mágicos, animaciones y diseño moderno.
+
+## Características
+
+- Regularización escolar
+- Cursos NOM certificados
+- Capacitación empresarial
+- Diseño responsivo con Tailwind CSS
+- Animaciones mágicas con estrellas
+- Integración con WhatsApp
+- Mapa interactivo de ubicación
+
+## Tecnologías
+
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide React Icons
+
+## Instalación
+
+\\\ash
+npm install
+npm run dev
+\\\`n

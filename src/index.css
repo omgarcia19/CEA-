@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 @layer base {
   :root {
@@ -16,12 +17,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 260 30% 20%;
 
-    --primary: 190 100% 45%;
+    --primary: 210 100% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 190 100% 35%;
+    --primary-hover: 210 100% 25%;
 
-    --secondary: 280 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 260 30% 20%;
 
     --muted: 0 0% 90%;
     --muted-foreground: 260 30% 40%;
@@ -45,9 +46,9 @@
     --surface-warm: 45 100% 90%;
     --gold: 45 100% 60%;
     --gold-dark: 45 100% 50%;
-    --magic-blue: 190 100% 45%;
-    --magic-green: 120 100% 50%;
-    --magic-purple: 280 100% 50%;
+    --magic-blue: 210 100% 35%;
+    --magic-gold: 45 100% 50%;
+    --magic-purple: 210 100% 30%;
     --magic-gold: 45 100% 60%;
     --navy: 260 100% 25%;
     --navy-dark: 260 30% 20%;
@@ -102,16 +103,34 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Lato', 'Montserrat', system-ui, sans-serif;
   }
 
-  /* Heading styles: use Poppins for stronger, brand-aligned headings */
+  /* Heading styles: use Playfair Display para títulos principales elegantes */
   h1, h2, h3 {
-    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
-    color: hsl(var(--navy-dark));
+    font-family: 'Playfair Display', 'Montserrat', system-ui, sans-serif;
+    color: hsl(var(--foreground));
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 }
 
